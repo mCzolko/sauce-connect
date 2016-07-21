@@ -15,9 +15,18 @@ USERNAME = os.environ.get('SAUCE_USERNAME')
 ACCESS_KEY = os.environ.get('SAUCE_ACCESS_KEY')
 sauce = SauceClient(USERNAME, ACCESS_KEY)
 
-browsers = [{"platform": "Mac OS X 10.9",
-             "browserName": "chrome",
-             "version": "31"}]
+browsers = [{
+                "platform": "Mac OS X 10.9",
+                "browserName": "chrome",
+                "version": "31"
+            }, {
+                "browserName": "Safari",
+                "appiumVersion": "1.5.3",
+                "deviceName": "iPhone 6 Simulator",
+                "deviceOrientation": "portrait",
+                "platformVersion": "9.3",
+                "platformName": "iOS",
+            }]
 
 def on_platforms(platforms):
     def decorator(base_class):
